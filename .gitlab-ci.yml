@@ -1,0 +1,11 @@
+stages:
+  - deploy
+
+deploy_job:
+  stage: deploy
+  tags:
+    - voice-gpt-bot-runner
+  script:
+    - sudo systemctl stop voicegptservice
+    - mvn clean package
+    - sudo systemctl start voicegptservice
