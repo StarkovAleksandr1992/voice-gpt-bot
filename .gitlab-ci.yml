@@ -9,6 +9,8 @@ test_job:
     - merge_request
   tags:
     - voice-gpt-bot-runner
+  script:
+    - mvn compile
 
 
 deploy_job:
