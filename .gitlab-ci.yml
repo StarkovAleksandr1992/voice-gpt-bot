@@ -1,11 +1,23 @@
 stages:
+  - test
   - deploy
+
+test_job:
+  image: maven:latest
+  stage: test
+  only:
+    - merge_request
+  tags:
+    - voice-gpt-bot-runner
+
 
 deploy_job:
   stage: deploy
+  only:
+    - main
   tags:
     - voice-gpt-bot-runner
   script:
     - sudo systemctl stop voicegptservice
-    - mvn clean package
+    - mvn package
     - sudo systemctl start voicegptservice
