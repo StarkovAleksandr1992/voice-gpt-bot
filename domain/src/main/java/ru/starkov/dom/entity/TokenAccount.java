@@ -1,7 +1,9 @@
 package ru.starkov.dom.entity;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NonNull;
+import lombok.ToString;
 import ru.starkov.dom.entity.identifier.TokenAccountId;
 import ru.starkov.dom.entity.identifier.TokenAccountIdGenerator;
 import ru.starkov.common.mark.Entity;
@@ -10,6 +12,8 @@ import java.math.BigInteger;
 import java.util.Objects;
 
 @Getter
+@EqualsAndHashCode
+@ToString
 public class TokenAccount implements Entity {
 
     private final TokenAccountId tokenAccountId;
@@ -43,9 +47,6 @@ public class TokenAccount implements Entity {
         this.balance = balance;
     }
 
-    public void deposit(BigInteger amount) {
-        this.balance = this.balance.add(amount);
-    }
 
     public void withdraw(BigInteger amount) {
         this.balance = this.balance.subtract(amount);
@@ -55,7 +56,4 @@ public class TokenAccount implements Entity {
         this.balance = this.balance.add(BigInteger.valueOf(amount));
     }
 
-    public void withdraw(Integer amount) {
-        this.balance = this.balance.subtract(BigInteger.valueOf(amount));
-    }
 }

@@ -1,9 +1,6 @@
 package ru.starkov.dom.value;
 
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import ru.starkov.common.mark.ValueObject;
 
 import java.util.Arrays;
@@ -14,6 +11,8 @@ import java.util.stream.Collectors;
 @Getter
 @Setter
 @Builder(access = AccessLevel.PRIVATE)
+@EqualsAndHashCode
+@ToString
 public class CustomerSettings implements ValueObject {
 
 

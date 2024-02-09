@@ -19,6 +19,8 @@ import static ru.starkov.dom.entity.Customer.State.ACTIVE;
 @Getter
 @Builder(toBuilder = true)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
+@EqualsAndHashCode
+@ToString
 public class CustomerRequest implements Entity {
 
     private final CustomerRequestId customerRequestId;
