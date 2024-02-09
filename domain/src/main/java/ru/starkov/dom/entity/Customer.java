@@ -16,6 +16,8 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Getter
+@EqualsAndHashCode
+@ToString
 public class Customer implements Entity {
 
     private final CustomerId customerId;
@@ -124,6 +126,7 @@ public class Customer implements Entity {
         this.tokenAccount = tokenAccount;
     }
 
+    @ToString
     public enum State {
         ACTIVE,
         INACTIVE,
