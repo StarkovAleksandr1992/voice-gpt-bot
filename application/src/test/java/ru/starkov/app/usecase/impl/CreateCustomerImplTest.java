@@ -19,19 +19,19 @@ import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class CreateCustomerImplTest {
-    @Spy
+    @Mock
     private CustomerGateway gateway;
 
-    @Spy
+    @Mock
     private CustomerIdGenerator customerIdGenerator;
 
-    @Spy
+    @Mock
     private TokenAccountIdGenerator tokenAccountIdGenerator;
 
-    @Spy
+    @Mock
     private CustomerNotificationService customerNotificationService;
 
-    @Spy
+    @Mock
     private EventPublisher eventPublisher;
 
     @InjectMocks
