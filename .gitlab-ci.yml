@@ -10,7 +10,7 @@ test_job:
   tags:
     - voice-gpt-bot-runner
   script:
-    - mvn compile
+    - mvn test
 
 
 deploy_job:
