@@ -44,7 +44,7 @@ public class CustomerDbModel {
     @OneToMany(mappedBy = "customerDbModel", fetch = FetchType.LAZY)
     private List<CustomerRequestDbModel> requests = new ArrayList<>();
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<ChatDbModel> chats = new ArrayList<>();
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
